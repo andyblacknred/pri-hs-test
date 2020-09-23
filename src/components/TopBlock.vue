@@ -38,6 +38,7 @@ export default {
   background-color: $white
   position: relative
   overflow: auto
+  padding-bottom: 20vh
 
 .logo
   width: 110px
@@ -72,7 +73,7 @@ export default {
   margin-top: 14.5px
   margin-bottom: 0
   line-height: 48px
-  //height: 48px
+  min-height: 96px
   @media screen and (max-width: $mobile)
     font-size: 28px
     line-height: 32px
@@ -80,9 +81,11 @@ export default {
 .patients
   display: flex
   justify-content: space-between
-  min-height: calc(100vh - 162.5px)
+  height: calc(80vh - 210.5px)
+  min-height: 275px
   @media screen and (max-width: $mobile)
     flex-direction: column
+    height: auto
   .patient
     display: flex
     width: 40%
@@ -105,6 +108,8 @@ export default {
       height: 100%
       object-fit: contain
       object-position: bottom left
+      @media screen and (max-width: $tablet)
+        width: 55%
       @media screen and (max-width: $mobile)
         width: 200px
         height: 100%
@@ -147,7 +152,7 @@ export default {
   font-size: 12px
   line-height: 24px
   position: absolute
-  bottom: 14px
+  bottom: calc(20vh + 14px)
   left: 29%
   margin: 0
   max-width: 50%
