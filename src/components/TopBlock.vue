@@ -45,6 +45,8 @@ export default {
   position: absolute
   top: 27px
   left: 16px
+  @media screen and (max-width: $mobile)
+    display: none
 
 .btn
   text-transform: uppercase
@@ -55,6 +57,9 @@ export default {
   padding: 9px 19px
   background-color: $main
   display: inline-block
+  font-size: 12px
+  @media screen and (max-width: $mobile)
+    padding: 5px 7px
 
 .title
   max-width: 65%
@@ -67,21 +72,49 @@ export default {
   margin-top: 14.5px
   margin-bottom: 0
   line-height: 48px
+  //height: 48px
+  @media screen and (max-width: $mobile)
+    font-size: 28px
+    line-height: 32px
 
 .patients
   display: flex
   justify-content: space-between
+  min-height: calc(100vh - 162.5px)
+  @media screen and (max-width: $mobile)
+    flex-direction: column
   .patient
     display: flex
+    width: 40%
+    align-items: center
+    justify-content: space-between
+    @media screen and (max-width: $mobile)
+      width: 100%
+      border-bottom: 2px solid $grey
     &:last-child
       flex-direction: row-reverse
+      @media screen and (max-width: $mobile)
+        flex-direction: row
+      .patient-img
+        object-position: bottom right
+        @media screen and (max-width: $mobile)
+          object-position: bottom left
+          transform: scaleX(-1)
     .patient-img
-      width: 50%
+      width: 60%
       height: 100%
-      object-fit: cover
-      object-position: top left
+      object-fit: contain
+      object-position: bottom left
+      @media screen and (max-width: $mobile)
+        width: 200px
+        height: 100%
+        max-width: 50%
+        align-self: flex-end
     .patient-info
       text-align: center
+      @media screen and (max-width: $mobile)
+        padding-top: 10px
+        padding-bottom: 10px
       .patient-name
         font-size: 40px
         color: $titleBlack
@@ -89,6 +122,9 @@ export default {
         margin: 0
         margin-bottom: 8px
         line-height: 48px
+        @media screen and (max-width: $mobile)
+          font-size: 28px
+          line-height: 32px
       .patient-desc
         font-size: 16px
         line-height: 22px
@@ -105,8 +141,20 @@ export default {
         margin: 0
         margin-top: 8px
 
-
-
+.bottom-info
+  color: $grey
+  font-family: 'Open Sans', sans-serif
+  font-size: 12px
+  line-height: 24px
+  position: absolute
+  bottom: 14px
+  left: 29%
+  margin: 0
+  max-width: 50%
+  @media screen and (max-width: $mobile)
+    position: static
+    padding: 15px
+    max-width: none
 
 
 </style>

@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <div class="wrapper"></div>
     <svg class="logo-left" width="192" height="18" viewBox="0 0 192 18" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path fill-rule="evenodd" clip-rule="evenodd" d="M131.859 11.2821C131.944 11.0446 132.025 10.8166 132.079 10.6245H136.222C136.261 10.7022 136.305 10.7878 136.353 10.8796C136.613 11.3813 136.968 12.0666 136.968 12.6323C136.968 13.3015 136.388 13.3852 135.476 13.3852V14.1381H141.36V13.3852C140.531 13.3015 140.117 12.9669 139.454 11.3774L136.637 4.85216C136.139 3.76462 135.891 2.92805 135.808 2.50977H134.151C133.985 3.17902 133.736 3.93194 133.405 4.60119L130.339 12.2976C129.925 13.1342 129.676 13.4688 128.848 13.4688V14.2218H132.991V13.4688C132.079 13.4688 131.499 13.3852 131.499 12.6323C131.499 12.2949 131.686 11.7687 131.859 11.2821ZM134.234 5.52142L135.974 9.70427H132.494L134.068 5.52142C134.068 5.41852 134.068 5.3789 134.087 5.36365C134.099 5.35411 134.119 5.35411 134.151 5.35411C134.151 5.35411 134.151 5.43776 134.234 5.52142Z" fill="white"/>
       <path fill-rule="evenodd" clip-rule="evenodd" d="M147.243 13.4689V14.3891L150.641 14.2218V13.3852C149.978 13.3016 149.646 13.2179 149.646 12.5487V0.83667L145.835 1.1713V1.84055C146.746 1.92421 147.078 2.09153 147.078 2.76078V5.18684C146.746 5.01952 146.083 4.85221 145.255 4.85221C142.603 4.85221 141.277 7.52924 141.277 9.70432C141.277 12.3813 142.272 14.3891 144.675 14.3891C145.752 14.3891 146.415 13.8872 146.995 13.3852C147.036 13.3852 147.057 13.3643 147.078 13.3434C147.098 13.3225 147.119 13.3016 147.16 13.3016C147.243 13.3016 147.243 13.3852 147.243 13.4689ZM145.835 5.85609C146.58 5.85609 146.995 6.19072 146.995 7.02729V12.2977C146.663 12.5487 146.166 12.716 145.835 12.716C144.426 12.716 143.929 10.9592 143.929 9.62066C143.929 7.36192 144.509 5.85609 145.835 5.85609Z" fill="white"/>
@@ -44,23 +45,44 @@ export default {
 
 <style lang="sass" scoped>
 .home
-  background-color: #000
   padding: 50px
   position: relative
   box-sizing: border-box
   min-height: 100vh
+  @media screen and (max-width: $mobile)
+    padding: 40px 8px 50px
+.wrapper
+  position: fixed
+  border: 50px solid $black
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  z-index: 1
+  @media screen and (max-width: $mobile)
+    border-top-width: 40px
+    border-left-width: 8px
+    border-right-width: 8px
 
 .logo-left
   width: 192px
   height: 18px
-  position: absolute
+  position: fixed
   left: 50px
   top: 16px
+  z-index: 1
+  @media screen and (max-width: $mobile)
+    top: 12px
+    left: 8px
 
 .logo-right
   width: 119px
   height: 17px
-  position: absolute
+  position: fixed
   top: 18px
   right: 50px
+  z-index: 1
+  @media screen and (max-width: $mobile)
+    top: 14px
+    right: 8px
 </style>
