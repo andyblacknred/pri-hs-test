@@ -79,8 +79,9 @@ export default {
       position: absolute
       width: 16px
       height: 16px
-      right: 5px
-      top: 5px
+      right: 10px
+      top: 10px
+      cursor: pointer
       &::before,
       &::after
         content: ''
